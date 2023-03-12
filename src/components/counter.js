@@ -1,6 +1,6 @@
 import React from "react";
 
-class Counter extends React.Component {
+/*class Counter extends React.Component {
     constructor() {
         super();
         this.state = { counter: 0 }
@@ -26,4 +26,22 @@ class Counter extends React.Component {
 
 }
 
-export default Counter;
+export default Counter;*/
+
+
+
+const Seconds = () => {
+    const [counter, setcouter] = useState(0)
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setcouter(counter => counter + 1);
+        }, 1000);
+        return () => clearInterval(timer)
+    });
+   
+   
+    return (
+        <div>{counter}</div>
+    )
+}
+export default Seconds; 
